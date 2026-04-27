@@ -3,16 +3,18 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
-const app = express(); // ✅ FIRST create app
+const app = express(); 
 
 app.use(cors());
 app.use(express.json());
 
-// ✅ IMPORT ROUTES AFTER app is created
-const authRoutes = require("./routes/auth");
 
-// ✅ USE ROUTES AFTER import
+const authRoutes = require("./routes/auth");
+const taskRoutes = require("./routes/task"); 
+
+
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");
