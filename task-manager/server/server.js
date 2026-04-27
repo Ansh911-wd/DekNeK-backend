@@ -17,7 +17,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send(" DekNek API is running...");
 });
 
 const PORT = process.env.PORT || 5000;
